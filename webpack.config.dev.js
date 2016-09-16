@@ -3,13 +3,19 @@ const webpack = require('webpack');
 
 module.exports = {
   entry: [
-    'react-hot-loader/patch',
+    // 'react-hot-loader/patch',
     './demo/index',
   ],
   output: {
     path: __dirname,
     filename: 'bundle.js',
     publicPath: '/',
+  },
+  resolve: {
+    alias: {
+      'react': 'preact-compat',
+      'react-dom': 'preact-compat',
+    },
   },
   plugins: [
     new webpack.NoErrorsPlugin(),

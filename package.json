@@ -15,7 +15,7 @@
     "clean-umd": "rimraf umd",
     "copy-assets": "cp -a demo/assets/. dist/assets",
     "copy-html-css": "cp -a demo/index.html dist/index.html && cp -a demo/index.css dist/index.css",
-    "dist": "npm run clean && webpack && npm run copy-assets && npm run copy-html-css",
+    "dist": "npm run clean && webpack -p && npm run copy-assets && npm run copy-html-css",
     "lint": "eslint src demo --fix",
     "umd": "npm run clean-umd && webpack --config webpack.config.umd.js"
   },
@@ -23,7 +23,9 @@
   "license": "MIT",
   "repository": "https://github.com/FormidableLabs/react-game-kit",
   "dependencies": {
-    "matter-js": "^0.10.0"
+    "matter-js": "^0.10.0",
+    "preact": "^6.0.2",
+    "preact-compat": "^3.1.0"
   },
   "devDependencies": {
     "babel-cli": "^6.10.1",
@@ -48,9 +50,6 @@
     "mobx-react": "^3.5.5",
     "postcss-loader": "^0.10.1",
     "raw-loader": "^0.5.1",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1",
-    "react-hot-loader": "^3.0.0-beta.2",
     "rimraf": "^2.5.4",
     "style-loader": "^0.13.1",
     "webpack": "^1.13.1",

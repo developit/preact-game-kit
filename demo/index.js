@@ -1,21 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Presentation from './presentation';
-import { AppContainer } from 'react-hot-loader';
 
-ReactDOM.render(
-  <AppContainer>
-    <Presentation />
-  </AppContainer>,
-  document.getElementById('root')
-);
-
-module.hot.accept('./presentation', () => {
-  const NextPresentation = require('./presentation').default;
+function init() {
+  const Presentation = require('./presentation').default;
   ReactDOM.render(
-    <AppContainer>
-      <NextPresentation />
-    </AppContainer>,
+    <Presentation />,
     document.getElementById('root')
   );
-});
+}
+
+init();
+
+if (module.hot) module.hot.accept('./presentation', init);
