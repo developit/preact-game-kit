@@ -24,7 +24,7 @@
   "repository": "https://github.com/FormidableLabs/react-game-kit",
   "dependencies": {
     "matter-js": "^0.10.0",
-    "preact": "^6.0.2",
+    "preact": "^7.2.0",
     "preact-compat": "^3.1.0"
   },
   "devDependencies": {
